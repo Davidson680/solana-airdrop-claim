@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Wallet Adapter Styles */
+.wallet-adapter-button {
+  @apply bg-solana-purple hover:bg-opacity-90 transition-all duration-300 rounded-lg px-6 py-3 font-semibold;
+}
+
+.wallet-adapter-button:hover {
+  @apply shadow-lg shadow-solana-purple/50;
+}
+
+.wallet-adapter-modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Glass Effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-gradient-to-r from-solana-purple to-solana-green bg-clip-text text-transparent;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-solana-purple to-solana-green hover:shadow-lg hover:shadow-solana-purple/50 transition-all duration-300 px-6 py-3 rounded-lg font-semibold text-white;
+}
+
+.btn-secondary {
+  @apply bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 px-6 py-3 rounded-lg font-semibold text-white;
+}
+
+/* Card Styles */
+.card {
+  @apply glass p-6 hover:bg-white/10 transition-all duration-300;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
